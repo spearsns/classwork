@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Mole!</title>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
+
+<style>
+.row{
+	width: 50vw;
+}.cell{
+	float: left;
+	width: 100px;
+	height: 100px;
+	border: 0.1vw solid black;
+}
+</style>
+
+<script>
+	$(document).ready(function(){
+
+	setInterval(function(){
+		var random = Math.floor((Math.random() * 18) + 1);
+		var target = Math.floor((Math.random() * 12) + 1);
+
+		switch(target){
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+				var src = 'img/mole.jpg';
+				var pts = 10;
+				break;
+			case 10:
+			case 11:
+				var src = 'img/helmet.jpg';
+				var pts = 50;
+				break;
+			case 12:
+				var src = 'img/boss.jpg';
+				var pts = 100;
+				break;
+					}
+
+			console.log(random);
+		
+		$('#cell-' + random).append('<img src="'+ src +'" id="target">');
+
+		setTimeout(function(){
+			$('#target').remove();
+			}, 990);
+
+		$('#target').click(function(){
+			var hit = Math.floor((Math.random() * 8) + 1);
+
+			switch(hit){
+			case 1:
+				var pic = 'bam.png';
+				break;
+			case 2:
+				var pic = 'bang.png';
+				break;
+			case 3:
+				var pic = 'blam.png';
+				break;
+			case 4:
+				var pic = 'boom.png';
+				break;
+			case 5:
+				var pic = 'kapow.png';
+				break;
+			case 6:
+				var pic = 'pow.png';
+				break;
+			case 7:
+				var pic = 'smack.png';
+				break;
+			case 8:
+				var pic = 'wham.png';
+				break;
+					}
+					
+			$('#target').replaceWith('<img src="img/' + pic + '" id="target">')		
+			console.log('hit');
+			});
+
+			}, 1000);
+	});
+
+</script>
+
+<body>
+
+<div id="container">
+	<div class="row">
+		<div id="cell-1" class="cell"></div>
+		<div id="cell-2" class="cell"></div>
+		<div id="cell-3" class="cell"></div>
+		<div id="cell-4" class="cell"></div>
+		<div id="cell-5" class="cell"></div>
+		<div id="cell-6" class="cell"></div>
+	</div>
+
+	<div class="row">
+		<div id="cell-7" class="cell"></div>
+		<div id="cell-8" class="cell"></div>
+		<div id="cell-9" class="cell"></div>
+		<div id="cell-10" class="cell"></div>
+		<div id="cell-11" class="cell"></div>
+		<div id="cell-12" class="cell"></div>
+	</div>
+
+	<div class="row">
+		<div id="cell-13" class="cell"></div>
+		<div id="cell-14" class="cell"></div>
+		<div id="cell-15" class="cell"></div>
+		<div id="cell-16" class="cell"></div>
+		<div id="cell-17" class="cell"></div>
+		<div id="cell-18" class="cell"></div>
+	</div>
+
+</div>
+
+</body>
+</html>

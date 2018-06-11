@@ -1,0 +1,13 @@
+body{
+	background-color: black;
+	color: white;
+}table{
+	table-layout: fixed;
+}table#standings td, 
+table#standings th,
+table#winners td,
+table#winners th{
+	border: solid 1px yellow;
+}table#winners th{
+	font-size: 3em;
+}

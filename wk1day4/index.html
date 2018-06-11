@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<title>JQuery Play</title>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.full-name').html($('.first-name').html() + ' ' + $('.last-name').html());
+			$('.location').html('Winston-Salem');
+			$('#our-table tbody tr:odd')
+                .css('background-color', '#F0F0F0')
+                .css('color', '#FF0000')
+                .click(function() {
+                    alert('clicked an odd row');
+                });
+
+			$('#add-to-table').click(function () {
+                var firstName = $('#first-name-text').val();
+                var lastName = $('#last-name-text').val();
+                $('#table-content').append(
+                	'<tr><td class="first-name">' + firstName + '</td><td class="last-Name"><h1>' + lastName + '</h1></td><td id="full-name"></td><td id="location"></td></tr>');
+                $('#first-name-text').val(null);
+                $('#last-name-text').val(null);
+            });
+		});
+	</script>
+</head>
+
+	<style type="text/css">
+		table#our-table{
+			background-color: black;
+			color: white;
+			width: 80%;
+		}
+	</style>
+
+<body>
+
+	<input type='text' id='first-name-text'></input>
+	<input type='text' id='last-name-text'></input>
+	<button id='add-to-table'>ADD TO TABLE</button>
+
+	<table id="our-table">
+		<thead>
+			<th>FIRST NAME</th>
+			<th>LAST NAME</th>
+			<th>FULL NAME</th>
+			<th>LOCATION</th>
+		</thead>
+		
+		<tbody id='table-content'>
+			<tr>
+				<td class='first-name'>Ali</td>
+				<td class='last-name'>Tahbaz</td>
+				<td class='full-name'></td>
+				<td class='location'></td>
+			</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tic tac toe</title>
+</head>
+<body>
+
+<style>
+td{
+	width: 100px;
+	height: 100px;
+	border: 2px solid black;
+}.disable{
+	pointer-events: none;
+}
+
+</style>
+
+<div style="float: left;">
+<table>
+	<tr>
+		<td id="A1" class='square' onclick="cell = 'A1'; A1 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="B1" class='square' onclick="cell = 'B1'; B1 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="C1" class='square' onclick="cell = 'C1'; C1 = turn; this.classList.add('disable'); mark();"></td>
+	</tr>
+
+	<tr>
+		<td id="A2" class='square' onclick="cell = 'A2'; A2 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="B2" class='square' onclick="cell = 'B2'; B2 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="C2" class='square' onclick="cell = 'C2'; C2 = turn; this.classList.add('disable'); mark();"></td>
+	</tr>
+	
+	<tr>
+		<td id="A3" class='square' onclick="cell = 'A3'; A3 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="B3" class='square' onclick="cell = 'B3'; B3 = turn; this.classList.add('disable'); mark();"></td>
+		<td id="C3" class='square' onclick="cell = 'C3'; C3 = turn; this.classList.add('disable'); mark();"></td>
+	</tr>
+</table>
+<button onclick="reset();" style="width: 100px; height: 50px;">RESET</button>
+<button onclick="AI();" style="width: 100px; height: 50px;">WATCH AI</button>
+</div>
+
+<div style="float: right;">
+	<table>
+		<tr>
+			<td colspan='2' style="font-weight: bolder; text-align: center;">SCOREBOARD</td>
+		</tr>
+
+		<tr>
+			<td><img src="X.png"></td>
+			<td><img src="O.png"></td>
+		</tr>
+
+		<tr>
+			<td id="X" style="font-weight: bolder; text-align: center;"></td>
+			<td id="O" style="font-weight: bolder; text-align: center;"></td>
+		</tr>
+</div>
+
+<script src="tictactoe.js" type="text/javascript"></script>
+</body>
+</html>
